@@ -265,24 +265,6 @@ loan_data.describe()
 ```python
 loan_data.sample(5)
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -408,11 +390,7 @@ loan_data[loan_data['credit.policy']==0]['fico'].hist(alpha=0.5,color='red',
 plt.legend()
 plt.xlabel('FICO')
 ```
-
-
-
-
-    Text(0.5, 0, 'FICO')
+Text(0.5, 0, 'FICO')
 
 
 
@@ -430,34 +408,15 @@ loan_data[loan_data['not.fully.paid']==0]['fico'].hist(alpha=0.5,color='red',
 plt.legend()
 plt.xlabel('FICO')
 ```
-
-
-
-
-    Text(0.5, 0, 'FICO')
-
-
-
-
+Text(0.5, 0, 'FICO')
 ![png](output_10_1.png)
-
-
 
 ```python
 plt.figure(figsize=(11,7))
 sns.countplot(x='purpose',hue='not.fully.paid',data=loan_data,palette='Set1')
 ```
 
-
-
-
-    <matplotlib.axes._subplots.AxesSubplot at 0x1a1b74c828>
-
-
-
-
 ![png](output_11_1.png)
-
 
 ## Setting Up the Data.
 
@@ -473,10 +432,6 @@ categorical_var = ['purpose']
 loan_data2 = pd.get_dummies(data= loan_data,columns=categorical_var,drop_first=True)
 loan_data2.columns
 ```
-
-
-
-
     Index(['credit.policy', 'int.rate', 'installment', 'log.annual.inc', 'dti',
            'fico', 'days.with.cr.line', 'revol.bal', 'revol.util',
            'inq.last.6mths', 'delinq.2yrs', 'pub.rec', 'not.fully.paid',
@@ -484,22 +439,15 @@ loan_data2.columns
            'purpose_educational', 'purpose_home_improvement',
            'purpose_major_purchase', 'purpose_small_business'],
           dtype='object')
-
-
-
 ## Train test Split
 
 
 ```python
 from  sklearn.model_selection import train_test_split
 ```
-
-
 ```python
 X = loan_data2.drop('not.fully.paid',axis = 1)
 ```
-
-
 ```python
 y = loan_data2['not.fully.paid']
 ```
@@ -515,55 +463,34 @@ X_trainset, X_testset, y_trainset, y_testset = train_test_split(X, y, test_size=
 ```python
 from sklearn.tree import DecisionTreeClassifier
 ```
-
-
 ```python
 loanTree = DecisionTreeClassifier(criterion="entropy", max_depth = 4)
 loanTree
 ```
-
-
-
-
     DecisionTreeClassifier(class_weight=None, criterion='entropy', max_depth=4,
                 max_features=None, max_leaf_nodes=None,
                 min_impurity_decrease=0.0, min_impurity_split=None,
                 min_samples_leaf=1, min_samples_split=2,
                 min_weight_fraction_leaf=0.0, presort=False, random_state=None,
                 splitter='best')
-
-
-
-
 ```python
 loanTree.fit(X_trainset,y_trainset)
 ```
-
-
-
-
     DecisionTreeClassifier(class_weight=None, criterion='entropy', max_depth=4,
                 max_features=None, max_leaf_nodes=None,
                 min_impurity_decrease=0.0, min_impurity_split=None,
                 min_samples_leaf=1, min_samples_split=2,
                 min_weight_fraction_leaf=0.0, presort=False, random_state=None,
                 splitter='best')
-
-
-
 ## Model Evaluation
 
 
 ```python
 predLoan = loanTree.predict(X_testset)
 ```
-
-
 ```python
 from sklearn.metrics import confusion_matrix,classification_report,precision_score
 ```
-
-
 ```python
 print(classification_report(y_testset,predLoan))
 ```
