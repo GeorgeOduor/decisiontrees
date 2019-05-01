@@ -4,7 +4,7 @@ ____
 # Decision Trees - Classification.
 ____
 
- <img src='download.png' />
+ ![png](download.png)
 
 Decision tree algorithm is a supervised learning model used in predicting a dependent variable with a series of training variables.Decision trees algorithms can be used for classification and regression purposes.
 
