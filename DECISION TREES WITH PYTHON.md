@@ -103,49 +103,10 @@ loan_data = pd.read_csv("loan_data.csv")
 loan_data.info()
 ```
 
-    <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 9578 entries, 0 to 9577
-    Data columns (total 14 columns):
-    credit.policy        9578 non-null int64
-    purpose              9578 non-null object
-    int.rate             9578 non-null float64
-    installment          9578 non-null float64
-    log.annual.inc       9578 non-null float64
-    dti                  9578 non-null float64
-    fico                 9578 non-null int64
-    days.with.cr.line    9578 non-null float64
-    revol.bal            9578 non-null int64
-    revol.util           9578 non-null float64
-    inq.last.6mths       9578 non-null int64
-    delinq.2yrs          9578 non-null int64
-    pub.rec              9578 non-null int64
-    not.fully.paid       9578 non-null int64
-    dtypes: float64(6), int64(7), object(1)
-    memory usage: 1.0+ MB
-
-
-
 ```python
 loan_data.describe()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
