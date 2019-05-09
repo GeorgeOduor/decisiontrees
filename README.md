@@ -80,4 +80,4 @@ Explanatory Variables.
 * _delinq.2yrs:_ The number of times the borrower had been 30+ days past due on a payment in the past 2 years.
 * _pub.rec:_ The borrower's number of derogatory public records (bankruptcy filings, tax liens, or judgments).
 
-[Click here](https://github.com/GeorgeOduor/decisiontrees/blob/master/DECISION%20TREES%20WITH%20PYTHON%20(1).ipynb) to see the python notebook associated with this project.
+[Click here](https://github.com/GeorgeOduor/decisiontrees/blob/master/DECISION%20TREES%20WITH%20PYTHON.md) to see the python notebook associated with this project.
