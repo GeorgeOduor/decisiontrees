@@ -43,7 +43,8 @@ In refrence to the above data ,lets say a node has 7 malignant and 1 beningh whi
 
 This is how entropy is calculated mathematicaly:
 
-$$Entropy = -p(Malignant)log(p(Malignant))-p(Benigh)log(p(Benigh))$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$Entropy&space;=&space;-p(Malignant)log(p(Malignant))-p(Benigh)log(p(Benigh))$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$Entropy&space;=&space;-p(Malignant)log(p(Malignant))-p(Benigh)log(p(Benigh))$$" title="$$Entropy = -p(Malignant)log(p(Malignant))-p(Benigh)log(p(Benigh))$$" /></a>
+
 
 The choice of the best tree depends on the node with the highest **Information Gain** after splitting.
 
@@ -51,7 +52,7 @@ The choice of the best tree depends on the node with the highest **Information G
 
 This is the information that can increase the level of certainity after splitting.This is calculated as follows.
 
-$$IG = Entropy\ of\ the\ tree\ before\ the\ split\ - weighted\ entropy\ after\ the\ split.$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$IG&space;=&space;Entropy\&space;of\&space;the\&space;tree\&space;before\&space;the\&space;split\&space;-&space;weighted\&space;entropy\&space;after\&space;the\&space;split.$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$IG&space;=&space;Entropy\&space;of\&space;the\&space;tree\&space;before\&space;the\&space;split\&space;-&space;weighted\&space;entropy\&space;after\&space;the\&space;split.$$" title="$$IG = Entropy\ of\ the\ tree\ before\ the\ split\ - weighted\ entropy\ after\ the\ split.$$" /></a>
 
 This process continues to build a basic decision tree.Below is a is a step by step process in python.
 ## Implimentation with Python.
